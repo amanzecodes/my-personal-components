@@ -1,54 +1,61 @@
-# React + TypeScript + Vite
+# Components
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+-This repo makes it easier for me, I am creating my most used components for my web apps
 
-Currently, two official plugins are available:
+--You can also make use of the component---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+--Components Created for now----
+-->HERO SECTION 13/03/25
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+![Hero Demo](https://github.com/amanzecodes/my-personal-components/blob/master/Screenshot%202025-03-13%20004031.png?raw=true)
 
 ```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+import '@fontsource/montserrat/700.css';
+export default function Hero() {
+  return (
+    <div className="relative h-screen w-full overflow-hidden top-0 pb-20">
+      {/* Ensure the absolute div takes full space */}
+      <div className="absolute inset-0 bg-black pointer-events-none flex items-center justify-center">
+        <svg
+          className="absolute w-full h-full opacity-40 text-neutral-700"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <defs>
+            {/* Grid Pattern */}
+            <pattern id="grid" width="3" height="3" patternUnits="userSpaceOnUse">
+              <path d="M 3 0 L 0 0 0 3" fill="none" stroke="#ffffff" strokeWidth="0.13" strokeOpacity="0.3" />
+            </pattern>
+
+            {/* Radial Gradient for Fade Effect */}
+            <radialGradient id="fadeMask" cx="50%" cy="50%" r="90%">
+              <stop offset="25%" stopColor="white" stopOpacity="1" />
+              <stop offset="100%" stopColor="black" stopOpacity="0" />
+            </radialGradient>
+
+            {/* Mask for Grid */}
+            <mask id="gridMask">
+              <rect width="100%" height="100%" fill="url(#fadeMask)" />
+            </mask>
+          </defs>
+
+          {/* Apply Grid with Even Fading Effect */}
+          <rect width="100%" height="100%" fill="url(#grid)" mask="url(#gridMask)" />
+        </svg>
+        <div className='max-w-2xl flex text-center justify-center'>
+          <h1 className="text-white" style={{
+              fontFamily: 'Montserrat, sans-serif',
+              fontSize: '2.5rem',
+              fontWeight: 600,
+          }}>
+            Transforming the way you build and deploy <span className='text-white/25'>applications</span>
+          </h1>
+        </div>
+      </div>
+    </div>
+  );
+}
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
