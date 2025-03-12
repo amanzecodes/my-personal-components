@@ -4,7 +4,7 @@
 
 --You can also make use of the component---
 
---Components Create for now----
+--Components Created for now----
 -->HERO SECTION 13/03/25
 
 
