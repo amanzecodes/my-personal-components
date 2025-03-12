@@ -7,7 +7,7 @@
 --Components Created for now----
 -->HERO SECTION 13/03/25
 
-![Hero Demo](https://github.com/amanzecodes/my-personal-components/blob/master/Screenshot%202025-03-13%20004031.png?raw=true)
+![Hero Demo](https://github.com/amanzecodes/my-personal-components/blob/master/Screenshot%202025-03-13%20005023.png?raw=true)
 
 ```js
 import '@fontsource/montserrat/700.css';
