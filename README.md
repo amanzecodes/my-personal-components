@@ -10,7 +10,6 @@
 ![Hero Demo](https://github.com/amanzecodes/my-personal-components/blob/master/Screenshot%202025-03-13%20005023.png?raw=true)
 
 ```js
-import '@fontsource/montserrat/700.css';
 export default function Hero() {
   return (
     <div className="relative h-screen w-full overflow-hidden top-0 pb-20">
@@ -43,13 +42,9 @@ export default function Hero() {
           {/* Apply Grid with Even Fading Effect */}
           <rect width="100%" height="100%" fill="url(#grid)" mask="url(#gridMask)" />
         </svg>
-        <div className='max-w-2xl flex text-center justify-center'>
-          <h1 className="text-white" style={{
-              fontFamily: 'Montserrat, sans-serif',
-              fontSize: '2.5rem',
-              fontWeight: 600,
-          }}>
-            Transforming the way you build and deploy <span className='text-white/25'>applications</span>
+        <div className='max-w-4xl flex text-center justify-center'>
+          <h1 className='text-3xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8'>
+          Hero Section
           </h1>
         </div>
       </div>
